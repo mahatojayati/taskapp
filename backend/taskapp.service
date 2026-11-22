@@ -1,0 +1,15 @@
+[Unit]
+Description=Task Manager Node.js API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/taskapp/backend
+EnvironmentFile=/opt/taskapp/backend/.env
+ExecStart=/usr/bin/node /opt/taskapp/backend/src/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
